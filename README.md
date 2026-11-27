@@ -17,8 +17,8 @@ stopping rule of Lloyd's algorithm.
 | `crira_dk.py` | Distributed Lloyd engine, proposed method (`--inits warm`), baselines (`kmeansll`, `incpp`, `mllib_kmeans`, `mllib_bisecting`), selection criteria (gap, CH, silhouettes) and metrics. |
 | `ejecutar_experimentos.sh` | Experiment campaigns used in the paper (blocks `kaggle_*`). |
 | `analizar_crira_dk.py` | Optional statistical analysis of a campaign (hierarchical bootstrap, paired non-inferiority). |
-| `results/` | Raw CSV and JSON outputs of every run reported in the paper. |
-| `paper_figures/make_figures.py` | Regenerates Figures 1–6 of the paper from `results/`. |
+| `results/` | Raw CSV and JSON outputs of every run reported in the paper. File names start with the experiment: `quality__` (Sections 4.1, 4.2, 4.7), `ablation__` (4.3), `stopping_rule__` (4.4), `mllib__` (4.5), `real_seed0__` and `real_covertype_seeds1-2__` (4.6). |
+| `make_figures.py` | Regenerates Figures 1–6 of the paper from `results/`. |
 | `figures/` | Figures produced by `make_figures.py`. |
 
 Comments and log messages in the source code are in Spanish; command-line options and output columns are in English or self-explanatory.
@@ -62,7 +62,7 @@ bash ejecutar_experimentos.sh kaggle_ablacion          # Section 4.3
 bash ejecutar_experimentos.sh kaggle_sensibilidad      # Section 4.4  (three stopping rules)
 bash ejecutar_experimentos.sh kaggle_mllib             # Section 4.5
 DATOS=./datos bash ejecutar_experimentos.sh kaggle_reales   # Section 4.6  (downloads Covertype, SUSY, HIGGS from UCI into DATOS)
-python paper_figures/make_figures.py                   # Figures 1–6
+python make_figures.py                                 # Figures 1–6
 ```
 
 Each block stops starting new runs after `BUDGET_H` hours (default 10.5) so that it fits in a 12-hour Kaggle session.
