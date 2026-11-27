@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Monotone Warm-Started K-Means Trajectories: A Divisive Approach Implemented in Apache Spark"
+authors:
+  - family-names: "Sánchez-Brito"
+    given-names: "Miguel"
+    affiliation: "Escuela Superior de Cómputo, Instituto Politécnico Nacional"
+    email: "msanchezbr@ipn.mx"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-27"
